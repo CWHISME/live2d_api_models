@@ -2,7 +2,7 @@
 // const live2d_path = "https://raw.githubusercontent.com/CWHISME/live2d-widget/master/";
 // const live2d_path = "https://fastly.jsdelivr.net/gh/CWHISME/CWHISME.github.io@master/live2d-widget/";
 // const live2d_path = "/live2d_api_models/";
-const live2d_path = "";
+const live2d_path = "https://fastly.jsdelivr.net/gh/CWHISME/live2d_api_models@master/";
 
 // 封装异步加载资源的方法
 function loadExternalResource(url, type) {
