@@ -3,7 +3,7 @@
 	"name": "琉璃婚纱",
 	"model": "Lead_00.moc",
 	"textures": [
-		  "textures/texture_00.png"
+		  "textures/texture_00.live2d"
 	   ],
 	"layout": {
 	"center_x": 0,
