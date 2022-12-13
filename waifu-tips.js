@@ -170,8 +170,9 @@ function loadWidget(config) {
 
 	(function initModel() {
 		let modelId = localStorage.getItem("modelId"),
-			modelTexturesId = localStorage.getItem("modelTexturesId");
-		if (modelId === null) {
+			modelTexturesId = localStorage.getItem("modelTexturesId"),
+			modelChangeTimeDay=localStorage.getItem("modelChangeTimeDay");
+		if (modelId === null||modelChangeTimeDay!=new Date().getDate()) {
 			firstLoadModel();
 		} else loadModel(modelId, modelTexturesId);
 		zoomModelSize();
@@ -235,6 +236,7 @@ function loadWidget(config) {
 	async function loadModel(modelId, modelTexturesId, message, modelName = null) {
 		localStorage.setItem("modelId", modelId);
 		localStorage.setItem("modelTexturesId", modelTexturesId);
+		localStorage.setItem("modelChangeTimeDay", new Date().getDate());
 		showMessage(message, 4000, 10);
 		if (useCDN) {
 			if (!modelList) await loadModelList();
