@@ -23,19 +23,35 @@ function loadWidget(config) {
 	}
 	localStorage.removeItem("waifu-display");
 	sessionStorage.removeItem("waifu-text");
+	//==================Font Awesome 图标=======================
+	// document.body.insertAdjacentHTML("beforeend", `<div id="waifu">
+	// 		<div id="waifu-tips"></div>
+	// 		<canvas id="live2d" width="1024" height="1024"></canvas>
+	// 		<div id="waifu-tool">
+	// 			<span class="fa fa-lg fa-comment"></span>
+	// 			<span class="fa fa-lg fa-paper-plane"></span>
+	// 			<span class="fa fa-lg fa-user-circle"></span>
+	// 			<span class="fa fa-lg fa-street-view"></span>
+	// 			<span class="fa fa-lg fa-camera-retro"></span>
+	// 			<span class="fa fa-lg fa-heart-o"></span>
+	// 			<span class="fa fa-lg fa-info-circle"></span>
+	// 			<span class="fa fa-lg fa-times"></span>
+	// 		</div>
+	// 	</div>`);
+	//==================iconfont 图标===========================
 	document.body.insertAdjacentHTML("beforeend", `<div id="waifu">
-			<div id="waifu-tips"></div>
-			<canvas id="live2d" width="1024" height="1024"></canvas>
-			<div id="waifu-tool">
-				<span class="fa fa-lg fa-comment"></span>
-				<span class="fa fa-lg fa-paper-plane"></span>
-				<span class="fa fa-lg fa-user-circle"></span>
-				<span class="fa fa-lg fa-street-view"></span>
-				<span class="fa fa-lg fa-camera-retro"></span>
-				<span class="fa fa-lg fa-heart-o"></span>
-				<span class="fa fa-lg fa-info-circle"></span>
-				<span class="fa fa-lg fa-times"></span>
-			</div>
+		<div id="waifu-tips"></div>
+		<canvas id="live2d" width="1024" height="1024"></canvas>
+		<div id="waifu-tool">
+			<span class="ic i-comments fa-comment"></span>
+			<span class="ic i-paper-plane fa-paper-plane"></span>
+			<span class="ic i-sakura rotate fa-user-circle"></span>
+			<span class="ic i-sakura rotate fa-street-view"></span>
+			<span class="ic i-heartbeat fa-camera-retro"></span>
+			<span class="ic i-heart fa-heart-o"></span>
+			<span class="ic i-info-circle fa-info-circle"></span>
+			<span class="ic i-times fa-times"></span>
+		</div>
 		</div>`);
 	// https://stackoverflow.com/questions/24148403/trigger-css-transition-on-appended-element
 	setTimeout(() => {
@@ -171,8 +187,8 @@ function loadWidget(config) {
 	(function initModel() {
 		let modelId = localStorage.getItem("modelId"),
 			modelTexturesId = localStorage.getItem("modelTexturesId"),
-			modelChangeTimeDay=localStorage.getItem("modelChangeTimeDay");
-		if (modelId === null||modelChangeTimeDay!=new Date().getDate()) {
+			modelChangeTimeDay = localStorage.getItem("modelChangeTimeDay");
+		if (modelId === null || modelChangeTimeDay != new Date().getDate()) {
 			firstLoadModel();
 		} else loadModel(modelId, modelTexturesId);
 		zoomModelSize();
@@ -228,7 +244,7 @@ function loadWidget(config) {
 	async function firstLoadModel() {
 		// 首次访问加载 指定模型 的 指定材质
 		if (!modelList) await loadModelList();
-		modelId =randomSelection(modelList.defaultModelInfo[0]); // 模型 ID
+		modelId = randomSelection(modelList.defaultModelInfo[0]); // 模型 ID
 		modelTexturesId = modelList.defaultModelInfo[1]; // 材质 ID
 		loadModel(modelId, modelTexturesId, "", modelList.models[modelId]);
 	}
@@ -302,6 +318,8 @@ function loadWidget(config) {
 		var lastIndexSize = modelList.sizeZoomList[sizeZoomIndex];
 		if (add) {
 			sizeZoomIndex++;
+			if (sizeZoomIndex >= modelList.sizeZoomList.length)
+				sizeZoomIndex = 0;
 			showMessage("好的啦 ~~~", 2000, 9);
 		}
 		const outOffsetPx = 15;

@@ -24,7 +24,7 @@
 
 #waifu {
 	bottom: -1000px;
-	left: 0;
+	right: 0;
 	line-height: 0;
 	margin-bottom: -10px;
 	position: fixed;
@@ -81,7 +81,7 @@
 	color: #aaa;
 	opacity: 0;
 	position: absolute;
-	right: -10px;
+	left: -10px;
 	top: 50px;
 	transition: opacity 1s;
 }
@@ -103,7 +103,7 @@
 	color: #0684bd; /* #34495e */
 }
 
-@keyframes shake {
+/* @keyframes shake {
 	2% {
 		transform: translate(.5px, -1.5px) rotate(-.5deg);
 	}
@@ -303,4 +303,4 @@
 	0%, 100% {
 		transform: translate(0, 0) rotate(0);
 	}
-}
+} */
