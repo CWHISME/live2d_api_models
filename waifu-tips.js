@@ -104,7 +104,7 @@ function loadWidget(config) {
 		document.querySelector("#waifu-tool .fa-heart-o").addEventListener("click", zoomModelSize);
 
 		document.querySelector("#waifu-tool .fa-info-circle").addEventListener("click", () => {
-			open("https://cwhisme.github.io/about/");
+			open(window.location.origin+"/about/");
 		});
 		document.querySelector("#waifu-tool .fa-times").addEventListener("click", () => {
 			localStorage.setItem("waifu-display", Date.now());
