@@ -104,7 +104,7 @@ function loadWidget(config) {
 		document.querySelector("#waifu-tool .fa-heart-o").addEventListener("click", zoomModelSize);
 
 		document.querySelector("#waifu-tool .fa-info-circle").addEventListener("click", () => {
-			open(window.location.origin+"/about/");
+			open(window.location.origin + "/about/");
 		});
 		document.querySelector("#waifu-tool .fa-times").addEventListener("click", () => {
 			localStorage.setItem("waifu-display", Date.now());
@@ -331,7 +331,7 @@ function loadWidget(config) {
 				sizeZoomIndex = 0;
 				size = modelList.sizeZoomList[sizeZoomIndex];
 				showMessage("你的浏览器界面太小了，再大一点可就装不下啦 ~", 5000, 9);
-			} else size = document.body.clientWidth - outOffsetPx;
+			} else size = Math.min(document.body.clientHeight, document.body.clientWidth) - outOffsetPx;
 		}
 		else size = modelList.sizeZoomList[sizeZoomIndex]
 		var panel = document.querySelector("#waifu #live2d");
