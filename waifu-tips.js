@@ -320,7 +320,7 @@ function loadWidget(config) {
 			sizeZoomIndex++;
 			if (sizeZoomIndex >= modelList.sizeZoomList.length)
 				sizeZoomIndex = 0;
-			showMessage("好的啦 ~~~", 2000, 9);
+			showMessage("好的 ~~~", 2000, 9);
 		}
 		const outOffsetPx = 15;
 		var outBoundSize = modelList.sizeZoomList[sizeZoomIndex] + outOffsetPx;
