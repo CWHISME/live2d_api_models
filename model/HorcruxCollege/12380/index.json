@@ -52,26 +52,21 @@
 		],
 		"flick_head": [
 			{
-				"file": "motions/touch_tail.mtn",
-				"sound": "sounds/22320_fight.ogg"
+				"file": "motions/touch_tail.mtn"
 			}
 		],
 		"tap_body": [
 			{
-				"file": "motions/touch_01_2.mtn",
-				"sound": "sounds/12320.ogg"
+				"file": "motions/touch_01_2.mtn"
 			},
 			{
-				"file": "motions/touch_gift.mtn",
-				"sound": "sounds/12380.ogg"
+				"file": "motions/touch_gift.mtn"
 			},
 			{
-				"file": "motions/touch_01_1.mtn",
-				"sound": "sounds/12300.ogg"
+				"file": "motions/touch_01_1.mtn"
 			},
 			{
-				"file": "motions/touch_99.mtn",
-				"sound": "sounds/22320_fight.ogg"
+				"file": "motions/touch_99.mtn"
 			}
 		]
 	}
