@@ -370,12 +370,12 @@ function initWidget(config, apiPath) {
 			}, 0);
 		}
 	});
-	if (localStorage.getItem("waifu-display") && Date.now() - localStorage.getItem("waifu-display") <= 86400000||/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
-		toggle.setAttribute("first-time", true);
-		setTimeout(() => {
-			toggle.classList.add("waifu-toggle-active");
-		}, 0);
-	} else {
-		loadWidget(config);
-	}
+	// if (localStorage.getItem("waifu-display") && Date.now() - localStorage.getItem("waifu-display") <= 86400000||/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+	toggle.setAttribute("first-time", true);
+	setTimeout(() => {
+		toggle.classList.add("waifu-toggle-active");
+	}, 0);
+	// } else {
+	// 	loadWidget(config);
+	// }
 }
